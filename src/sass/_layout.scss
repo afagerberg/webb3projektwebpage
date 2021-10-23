@@ -1,0 +1,258 @@
+@import "reset";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:$fontstack;
+}
+a{
+    text-decoration:none;
+}
+
+//Huvudnavigering
+nav {
+    position: relative;
+    width:100%;
+    padding:0 5px 0 5px;
+    margin:0 auto;
+    background-color:white;
+    padding-top:100px;
+    margin-top:-100px;
+    height:700px;
+    z-index:2;
+}
+
+#frontlogo {
+    max-width:300px;
+    margin:0 auto;
+    height:200px;
+    background-color:$primary1;
+    margin-bottom:10px;
+}
+
+h1 {
+    max-width:300px;
+    margin:0 auto;
+    font-size:2.3em;
+    text-align:center;
+    color:rgb(189, 189, 189);
+    padding-bottom:10px;
+    margin-bottom:40px;
+    border-bottom:1px solid rgb(204, 204, 204);
+}
+
+.topics{
+    list-style: none;
+    max-width:600px;
+    margin:0 auto;
+    display: flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:0.5px;
+}
+
+.topics li {
+    flex:49%;
+    text-align:center;
+    margin:1px;
+    font-size:1.1em;
+
+    a {
+        display:block;
+    padding:50px;
+    color:white;
+    font-weight:bold;
+    transition:all 0.2s; 
+    }
+
+    a:hover {filter:opacity(0.6);}
+    
+}
+
+.box1 {background-color:$primary1;}
+.box2 {background-color:$primary2;}
+.box3 {background-color:$primary3;}
+.box4 {background-color:$primary4; color:white;}
+
+//sidhuvud
+header{
+    position:sticky;
+    top:0;
+    display:flex;
+    justify-content: space-between;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding:10px;
+    background-color:rgba(255, 255, 255, 0.87);
+    z-index:1;
+
+    .logobox{
+        margin-left:50px;
+        width:100px;
+        height:70px;
+        background-color:black;
+    }
+
+    ul {
+        list-style:none;
+        display:inline-block;
+        width:auto;
+        margin-top:15px;
+    
+    }
+
+    li {
+        float:left;
+        width:fit-content;
+        border:0;
+
+        a {
+            color:rgb(43, 43, 43);
+            transition: all 0.2s;
+            font-weight:bold;
+            display:inline-block;
+            padding:10px 15px 10px 15px;
+            border-right:0.5px solid rgb(204, 204, 204);
+        }
+
+    }
+
+    a:hover {
+        filter:opacity(0.6);
+    }
+}
+
+#intro {
+    max-width:600px;
+    margin:0 auto;
+    padding-top:300px;
+    padding-bottom:300px;
+
+    .roundimg {
+        margin:0 auto;
+        width:300px;
+        height:300px;
+        border-radius:300px;
+        border:1px solid grey;
+    }
+
+    h2{
+        text-align:center;
+        margin-top:25px;
+        font-size:1.6em;
+    }
+
+    p{  
+        margin-top:10px;
+        font-size:1.1em;
+        text-align:center;
+    }
+    strong {
+        display:block;
+        padding-top:20px;
+        color:grey;
+    }
+
+}
+
+.goto {
+    margin-top:5px;
+   height:45px;
+   border-bottom:2px solid grey;
+   text-align:center;
+   font-size:2.5em;
+
+   a{
+       display:block;
+       background-color:rgb(255, 255, 255);
+       width:60px;
+       margin:0 auto;
+       color:grey;
+       padding:0 5px 0 5px;
+       transition:all 0.3s;
+   }
+
+   a:hover {
+       color:rgb(32, 32, 32);
+       padding:5px 5px 0px 5px;
+       margin-bottom:-40px;
+   }
+
+   a:after{
+    content: ' \25BD';
+    
+   }
+}
+
+#educontent, #workcontent, #webpcontent {
+    width:100%;
+    padding:20px 5px 20px 5px;
+    height:500px;
+}
+
+#educontent { 
+    background-color:$primary1;
+    table th{
+        color:$primary1;
+    }
+}
+#workcontent { 
+    background-color:$primary2;
+    table th{
+        color:$primary2;
+    }
+}
+#webpcontent { 
+    background-color:$primary3;
+}
+
+.headingcontent {
+    max-width:800px;
+    margin:0 auto;
+    color:white;
+    font-size:2em;
+    padding-bottom:20px;
+}
+
+table {
+    border-collapse: collapse;
+    max-width:800px;
+    width:100%;
+    margin:0 auto;
+}
+
+thead {
+    background-color:white;
+    th {
+        padding:20px;
+    }
+}
+
+footer {
+    max-width:1200px;
+    margin:0 auto;
+    margin-top:100px;
+    padding:100px 10px 50px 10px;
+    border-top:2px solid rgb(179, 179, 179);
+
+    a {
+        color: rgb(71, 71, 71);
+        font-weight:bold;
+    }
+    a:hover {
+        filter:opacity(0.6);
+    }
+
+    p {
+        text-align:center;
+        color:rgb(71, 71, 71);
+        margin-bottom:15px;
+    }
+}
+
+
+
+
+ 
