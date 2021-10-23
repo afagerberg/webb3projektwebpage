@@ -9,17 +9,32 @@
 </head>
 <body>
     <header>
-        <a href="index.php"><div class="logobox"></div></a>
+        <a href="#frontlogo"><div class="logobox"></div></a>
 
-        <ul>
+        <ul id="horizontal">
         <li><a href="#educontent"> Utbildningar</a></li>
         <li><a href="#workcontent">Arbetserfarenhet</a></li>
         <li><a href="#webpcontent">Portfolio</a></li>
-        <li><a href="#intro" class="logout">Introduktion</a></li>
-        
+        <li><a href="#intro">Introduktion</a></li>
         </ul>
+
+        <div class="menubars" onclick="openmenu(this)">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </div>
+
+        <nav id="menu">
+            <ul id="dropdown">
+                <li><a href="#educontent" id="a1"> Utbildningar</a></li>
+                <li><a href="#workcontent" id="a2">Arbetserfarenhet</a></li>
+                <li><a href="#webpcontent" id="a3">Portfolio</a></li>
+                <li><a href="#intro" id="a4">Introduktion</a></li>
+                </ul>
+        </nav>
+
     </header>
-    <nav>
+    <div id="bannernav">
         <div id="frontlogo">
 
         </div>
@@ -30,7 +45,7 @@
             <li><a href="#webpcontent" class="box3">portfolio</a></li>
             <li><a href="#intro" class="box4">Introduktion</a></li>   
         </ul>
-    </nav>
+    </div>
 
     <div id="intro">
         <div class="roundimg"></div>
@@ -94,9 +109,9 @@
      <div id="webpcontent">
         <h2 class="headingcontent">Mina webbplatser</h2>
          <!-- Utskrift utvecklade webblatser-->
-        <div id="webplist">
+        <ul id="webplist">
 
-        </div>    
+        </ul>    
 
     </div>
 
@@ -104,6 +119,8 @@
         <p><a href="#">Gå till administration</a></p>
         <p>Webbutveckling III Projekt // Alice Fagerberg</p>
     </footer>
+
+    <script src="js/main.js"></script>
     
 </body>
 </html>

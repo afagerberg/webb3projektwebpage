@@ -1,0 +1,46 @@
+
+@media screen and (min-width:750px){
+    header{
+        #horizontal {
+            display:inline-block;
+            width:auto;
+            height:auto;
+            li{
+                float:left;
+            }
+        }
+        .menubars {
+            display:none;
+        }
+        #dropdown{
+            display:none;
+        }
+        nav{
+            display:none;
+
+        }
+    }
+}
+@media screen and (min-width:810px){
+    #intro{
+        .roundimg {
+            width:300px;
+            height:300px;
+            border-radius:300px;
+        }
+    }
+    #educontent, #workcontent, #webpcontent {
+        padding:60px 8px 100px 8px;
+    }
+    table{
+        display:block;
+    }
+
+    #edulist, #worklist{
+        display:none;
+    }
+
+    .headingcontent {
+        max-width:800px;
+    }
+}
