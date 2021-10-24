@@ -1,5 +1,8 @@
 
 @media screen and (min-width:750px){
+    #bannernav{
+        padding:100px 5px 0 5px;
+    }
     header{
         #horizontal {
             display:inline-block;
@@ -20,8 +23,19 @@
 
         }
     }
+
+    #intro {
+        padding-top:300px;
+        padding-bottom:300px;
+    }
 }
 @media screen and (min-width:810px){
+
+    header{
+        a:hover {
+            filter:opacity(0.6);
+        }
+    }
     #intro{
         .roundimg {
             width:300px;

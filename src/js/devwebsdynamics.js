@@ -15,7 +15,7 @@ function getAllwebpages(){
     .then(data =>{
        data.forEach(webpage =>{
            webplistEl.innerHTML +=
-           `<li><span class="webtitle">${webpage.title}</span>
+           `<li><strong class="webtitle">${webpage.title}</strong>
             <p>${webpage.pagedescription}</p>
             <a href="${webpage.pageurl}" target="_blank"> Webblänk </a>
             </li>`;

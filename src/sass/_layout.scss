@@ -21,7 +21,7 @@ p{
 #bannernav {
     position: relative;
     width:100%;
-    padding:0 5px 0 5px;
+    padding:0 5px 10px 5px;
     margin:0 auto;
     background-color:white;
     padding-top:100px;
@@ -41,7 +41,7 @@ p{
 h1 {
     max-width:300px;
     margin:0 auto;
-    font-size:2.3em;
+    font-size: 1.85em;
     text-align:center;
     color:rgb(189, 189, 189);
     padding-bottom:10px;
@@ -95,7 +95,7 @@ header{
     z-index:1;
 
     .logobox{
-        margin-left:50px;
+        margin-left:20px;
         width:100px;
         height:70px;
         background-color:black;
@@ -110,30 +110,32 @@ header{
       
       .bar1, .bar2, .bar3 {
         width: 50px;
-        height: 5px;
+        height: 6px;
         background-color: #333;
         margin: 6px 0;
         transition: 0.4s;
-        border-radius:3px;
+        border-radius:6px;
       }
       
       .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 6px);
-        transform: rotate(-45deg) translate(-9px, 6px);
+        -webkit-transform: rotate(-45deg) translate(-9px, 7px);
+        transform: rotate(-45deg) translate(-9px, 7px);
       }
       
       .change .bar2 {opacity: 0;}
       
       .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-9px, -6px);
-        transform: rotate(45deg) translate(-9px, -6px);
+        -webkit-transform: rotate(45deg) translate(-9px, -7px);
+        transform: rotate(45deg) translate(-9px, -7px);
       }
     nav{
-        background-color: $primary1;
+        
         height:0;
         overflow: hidden;
         width:100%;
         transition:all 0.2s;
+        margin-top:10px;
+        
 
         ul{
             width:100%;
@@ -143,12 +145,12 @@ header{
                 a{ 
                     display:block;
                     width:100%;
-                    padding:18px;
-                    color: lighten($primary1, 80);
+                    padding:25px 20px 20px 20px;
+                    border-top:2px solid rgba(202, 202, 202, 0.637);
+                    color: $primary3;
                     font-weight:bold;
                     font-size:1.1em;
                     transition:all 0.3s;
-                    border-right:1px solid darken($primary2, 7);
                 }
             }
         }
@@ -165,6 +167,7 @@ header{
             float:left;
             width:fit-content;
             border:0;
+            font-size:1.05em;
     
             a {
                 color:rgb(43, 43, 43);
@@ -178,18 +181,14 @@ header{
         }
     
     }
-
-    a:hover {
-        filter:opacity(0.6);
-    }
 }
 
 #intro {
     max-width:600px;
     width:94%;
     margin:0 auto;
-    padding-top:300px;
-    padding-bottom:300px;
+    padding-top:100px;
+    padding-bottom:100px;
 
     .roundimg {
         margin:0 auto;
@@ -219,8 +218,7 @@ header{
 }
 
 .goto {
-    margin-top:5px;
-   height:45px;
+   height:25px;
    border-bottom:2px solid grey;
    text-align:center;
    font-size:2.5em;
@@ -250,6 +248,7 @@ header{
 #educontent, #workcontent, #webpcontent {
     width:100%;
     padding:50px 8px 50px 8px;
+    scroll-margin-top:90px;
 }
 
 #educontent { 
@@ -307,6 +306,7 @@ header{
                 display:block;
                 padding-top:10px;
                 font-size: 1.2em;
+                font-weight:$bold;
                 color:$primary4;
                 transition:all 0.3s;
             }
@@ -340,7 +340,8 @@ header{
 
     li{
         margin-bottom:10px;
-        margin-top:10px;
+        margin-top:5px;
+        strong {font-weight:$bold; padding-top:5px;}
     }
 }
 
@@ -352,21 +353,26 @@ table {
     width:100%;
     font-size:1.1em;
     margin:0 auto;
-    vertical-align: top;
+    
     text-align:left;
     display:none;
 
     thead {
         background-color:white;
+        
     }
     th {
         padding:18px 12px 18px 12px;
+        font-weight:$bold;
+        width:100%;
+        vertical-align: top;
         
     }
 
     td{
         color:white;
-        padding:25px 12px 25px 12px;  
+        padding:25px 12px 25px 12px;
+        vertical-align: top;
     }
     tr { border-bottom:1px solid white;}
 }
@@ -374,13 +380,14 @@ table {
 
 
 footer {
-    max-width:1200px;
+    max-width:600px;
     margin:0 auto;
     margin-top:100px;
     padding:100px 10px 50px 10px;
     border-top:2px solid rgb(179, 179, 179);
 
     a {
+        display:block;  
         color: rgb(71, 71, 71);
         font-weight:bold;
     }
@@ -391,7 +398,11 @@ footer {
     p {
         text-align:center;
         color:rgb(71, 71, 71);
-        margin-bottom:15px;
+        margin-bottom:10px;
+    }
+
+    .contact {
+        padding-bottom:25px
     }
 }
 
