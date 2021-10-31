@@ -1,3 +1,4 @@
+/*Layout */
 @import "reset";
 
 html {
@@ -17,25 +18,28 @@ p{
     line-height:1.5;
 }
 
-//Huvudnavigering
+//Bannernavigering
 #bannernav {
     position: relative;
     width:100%;
-    padding:0 5px 10px 5px;
+    padding:0 5px 20px 5px;
     margin:0 auto;
     background-color:white;
     padding-top:100px;
-    margin-top:-100px;
     min-height:700px;
+    margin-bottom:-78px;
     z-index:2;
 }
-
 #frontlogo {
-    max-width:300px;
+    max-width:320px;
+    width:100%;
     margin:0 auto;
-    height:200px;
-    background-color:$primary1;
+    padding-left:10px;
+    padding-right:10px;
     margin-bottom:10px;
+}
+#frontlogo img, .logobox img, .roundimg img {
+    width:100%;
 }
 
 h1 {
@@ -43,12 +47,13 @@ h1 {
     margin:0 auto;
     font-size: 1.85em;
     text-align:center;
-    color:rgb(189, 189, 189);
+    color:lighten($primary3,60);
     padding-bottom:10px;
+    padding-top:10px;
     margin-bottom:40px;
-    border-bottom:1px solid rgb(204, 204, 204);
+    border-top:1px solid lighten($primary3,60);
 }
-
+//navigeringstopics i boxar
 .topics{
     list-style: none;
     max-width:600px;
@@ -67,10 +72,10 @@ h1 {
 
     a {
         display:block;
-    padding:50px;
-    color:white;
-    font-weight:bold;
-    transition:all 0.2s; 
+        padding:50px;
+        color:white;
+        font-weight:bold;
+        transition:all 0.2s; 
     }
 
     a:hover {filter:opacity(0.6);}
@@ -80,7 +85,7 @@ h1 {
 .box1 {background-color:$primary1;}
 .box2 {background-color:$primary2;}
 .box3 {background-color:$primary3;}
-.box4 {background-color:$primary4; color:white;}
+.box4 {background-color:$primary4;}
 
 //sidhuvud
 header{
@@ -90,44 +95,33 @@ header{
     justify-content: space-between;
     flex-direction: row;
     flex-wrap: wrap;
-    padding:10px 0px 10px 0;
+    padding:18px 0px 5px 0;
     background-color:rgba(255, 255, 255, 0.87);
     z-index:1;
-
+    
     .logobox{
         margin-left:20px;
-        width:100px;
-        height:70px;
-        background-color:black;
+        width:150px;
+        margin-top:5px;
     }
+
     /*dropdownmeny */
     .menubars {
         display: inline-block;
         cursor: pointer;
         margin-right:20px;
-        margin-top:15px;
+
       }
       
       .bar1, .bar2, .bar3 {
         width: 50px;
         height: 6px;
-        background-color: #333;
+        background-color: $primary3;
         margin: 6px 0;
         transition: 0.4s;
         border-radius:6px;
       }
       
-      .change .bar1 {
-        -webkit-transform: rotate(-45deg) translate(-9px, 7px);
-        transform: rotate(-45deg) translate(-9px, 7px);
-      }
-      
-      .change .bar2 {opacity: 0;}
-      
-      .change .bar3 {
-        -webkit-transform: rotate(45deg) translate(-9px, -7px);
-        transform: rotate(45deg) translate(-9px, -7px);
-      }
     nav{
         
         height:0;
@@ -139,18 +133,11 @@ header{
 
         ul{
             width:100%;
-        
+            //stående lista i dropdown
             li{    
                     
                 a{ 
-                    display:block;
-                    width:100%;
-                    padding:25px 20px 20px 20px;
-                    border-top:2px solid rgba(202, 202, 202, 0.637);
-                    color: $primary3;
-                    font-weight:bold;
-                    font-size:1.1em;
-                    transition:all 0.3s;
+                    @include headnav($primary3, $horizontal: false);
                 }
             }
         }
@@ -161,7 +148,6 @@ header{
         list-style:none;
         display:none;
         width:auto;
-        margin-top:15px;
 
         li {
             float:left;
@@ -170,12 +156,7 @@ header{
             font-size:1.05em;
     
             a {
-                color:rgb(43, 43, 43);
-                transition: all 0.2s;
-                font-weight:bold;
-                display:inline-block;
-                padding:10px 15px 10px 15px;
-                border-right:0.5px solid rgb(204, 204, 204);
+                @include headnav($primary3, $horizontal: true);
             }
     
         }
@@ -183,11 +164,12 @@ header{
     }
 }
 
+//siddel med introduktion
 #intro {
     max-width:600px;
     width:94%;
     margin:0 auto;
-    padding-top:100px;
+    padding-top:150px;
     padding-bottom:100px;
 
     .roundimg {
@@ -195,7 +177,8 @@ header{
         width:230px;
         height:230px;
         border-radius:230px;
-        border:1px solid grey;
+        overflow:hidden;
+        box-shadow: 0px 0px 5px 1px rgb(0 0 0 / 30%);
     }
 
     h2{
@@ -206,20 +189,19 @@ header{
 
     p{  
         margin-top:10px;
-        font-size:1.1em;
         text-align:center;
     }
     strong {
         display:block;
         padding-top:20px;
-        color:grey;
+        color:lighten($primary3,30);
     }
 
 }
-
+// goto-pil
 .goto {
    height:25px;
-   border-bottom:2px solid grey;
+   border-bottom:2px solid lighten($primary3,30);
    text-align:center;
    font-size:2.5em;
 
@@ -228,13 +210,13 @@ header{
        background-color:rgb(255, 255, 255);
        width:60px;
        margin:0 auto;
-       color:grey;
+       color:lighten($primary3,30);
        padding:0 5px 0 5px;
        transition:all 0.3s;
    }
 
    a:hover {
-       color:rgb(32, 32, 32);
+       color:$primary3;
        padding:5px 5px 0px 5px;
        margin-bottom:-40px;
    }
@@ -244,15 +226,10 @@ header{
     
    }
 }
-
-#educontent, #workcontent, #webpcontent {
-    width:100%;
-    padding:50px 8px 50px 8px;
-    scroll-margin-top:90px;
-}
+//siddelar med portfolioinnehåll
 
 #educontent { 
-    background-color:$primary1;
+    @include content($primary1);
     table th{
         color:$primary1;
     }
@@ -262,7 +239,7 @@ header{
     }
 }
 #workcontent { 
-    background-color:$primary2;
+    @include content($primary2);
     table th{
         color:$primary2;
     }
@@ -273,8 +250,8 @@ header{
 }
 
 /*Listning i webpcontent */
-#webpcontent { 
-    background-color:$primary3;
+#webcontent { 
+    @include content($primary3);
 
     #webplist{
         max-width:800px;
@@ -352,8 +329,7 @@ table {
     max-width:800px;
     width:100%;
     font-size:1.1em;
-    margin:0 auto;
-    
+    margin:0 auto;  
     text-align:left;
     display:none;
 
@@ -378,17 +354,17 @@ table {
 }
 
 
-
+//sidfot
 footer {
     max-width:600px;
     margin:0 auto;
     margin-top:100px;
     padding:100px 10px 50px 10px;
-    border-top:2px solid rgb(179, 179, 179);
+    border-top:2px solid lighten($primary3,60);
 
     a {
         display:block;  
-        color: rgb(71, 71, 71);
+        color: lighten($primary3,15);
         font-weight:bold;
     }
     a:hover {
@@ -397,8 +373,12 @@ footer {
 
     p {
         text-align:center;
-        color:rgb(71, 71, 71);
+        color:lighten($primary3,15);
         margin-bottom:10px;
+    }
+    strong {
+        font-weight: 600;
+        border-bottom:1px solid lighten($primary3,60);
     }
 
     .contact {

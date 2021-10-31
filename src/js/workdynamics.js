@@ -1,15 +1,16 @@
+//DT173G Projekt webbsida, Alice Fagerberg
 "use strict";
-
+// Variabler
 let worktableEl = document.getElementById("worktable");
 let worklistEl = document.getElementById("worklist");
 
 window.addEventListener("load", getAllJobs);
-
+//Läser in och skriver ut arbetserfarenhet
 function getAllJobs(){
     worklistEl.innerHTML = "";
     worktableEl.innerHTML = "";
 
-    fetch("http://localhost/webb3projekt/workexperience")
+    fetch("https://dt173g_portfolio_restapi.afagerberg.se/workexperience")
     .then(response => response.json())
     .then(data =>{
        data.forEach(job =>{

@@ -1,59 +1,88 @@
+<!-- DT173G projekt webbsida, Alice Fagerberg-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>afagerberg - Min digitala portfolio</title>
     <link rel="stylesheet" href="css/main.css">
-    <title>afagerbergCV - Mitt digitala CV</title>
+
+    <!-- favikon-->
+    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="icon" type="image/png" href="images/ikon.png">
+
 </head>
 <body>
-    <header>
-        <a href="#frontlogo"><div class="logobox"></div></a>
+    
 
-        <ul id="horizontal">
-        <li><a href="#educontent"> Utbildningar</a></li>
-        <li><a href="#workcontent">Arbetserfarenhet</a></li>
-        <li><a href="#webpcontent">Webbsidor</a></li>
-        <li><a href="#intro">Introduktion</a></li>
-        </ul>
-
-        <div class="menubars" onclick="openmenu(this)">
-            <div class="bar1"></div>
-            <div class="bar2"></div>
-            <div class="bar3"></div>
-        </div>
-
-        <nav id="menu">
-            <ul id="dropdown">
-                <li><a href="#educontent" id="a1"> Utbildningar</a></li>
-                <li><a href="#workcontent" id="a2">Arbetserfarenhet</a></li>
-                <li><a href="#webpcontent" id="a3">Webbsidor</a></li>
-                <li><a href="#intro" id="a4">Introduktion</a></li>
-                </ul>
-        </nav>
-
-    </header>
+    <!-- Navigering i banner-->
     <div id="bannernav">
         <div id="frontlogo">
-
+            <img src="images/logo.png" alt="Logotyp">
         </div>
         <h1>Min digitala portfolio</h1>
         <ul class="topics">
             <li><a href="#educontent" class="box1"> Utbildningar</a></li>
             <li><a href="#workcontent" class="box2">Arbetserfarenhet</a></li>
-            <li><a href="#webpcontent" class="box3">Webbsidor</a></li>
+            <li><a href="#webcontent" class="box3">Webbsidor</a></li>
             <li><a href="#intro" class="box4">Introduktion</a></li>   
         </ul>
     </div>
 
+    <!-- Sidhuvud -->
+    <header>
+        <a href="#bannernav">
+            <div id ="logolink" class="logobox"><!-- logotyp -->
+                <img src="images/logo.png" alt="Logotyp">
+            </div>
+        </a>
+        <!-- Navigering horisontell - desktop-->
+        <ul id="horizontal">
+        <li><a href="#educontent"> Utbildningar</a></li>
+        <li><a href="#workcontent">Arbetserfarenhet</a></li>
+        <li><a href="#webcontent">Webbsidor</a></li>
+        <li><a href="#intro">Introduktion</a></li>
+        </ul>
+
+        <!-- Navigering med ikon och dropdown - mobil-->
+        <div class="menubars" onclick="openmenu()">
+            <div class="bar1" id="b1"></div>
+            <div class="bar2" id="b2"></div>
+            <div class="bar3" id="b3"></div>
+        </div>
+
+        <nav id="menu">
+            <ul id="dropdown">
+                <li><a id="a1" href="#educontent"> Utbildningar</a></li>
+                <li><a id="a2" href="#workcontent">Arbetserfarenhet</a></li>
+                <li><a id="a3" href="#webcontent">Webbsidor</a></li>
+                <li><a id="a4" href="#intro">Introduktion</a></li>
+                </ul>
+        </nav>
+
+    </header>
+
+    <!-- introduktionsdel-->
     <div id="intro">
-        <div class="roundimg"></div>
+        <div class="roundimg">
+            <picture>   
+                <source srcset="images/profilepic.webp" type="image/webp">
+                <source srcset="images/profilepic.jpg" type="image/jpeg">
+    
+                <img src="images/profilepic.jpg" alt="Profilbild på tjej"/>
+            </picture>
+        </div>
         <h2>Hej där Alice Fagerberg här</h2>
-        <p>Hans fram ska ingalunda sällan miljoner hav och del, söka ta jäst plats vemod söka oss brunsås, fram färdväg bäckasiner erfarenheter av samma se. Sällan åker som redan verkligen jäst denna söka ännu om.</p>
+        <p> Kreativitet har alltid stått mig varmt om hjärtat, men känner ändå att det behöver finnas 
+            en viss logik bakom skapandet. Därför har jag valt att börja med webbutveckling - Logik och kreativitet, 
+            den perfekta blandningen jag tycker mig finna inom webbutvecklingens ramar.</p>
         <p><strong>Gå till mina kontaktuppgifter</strong></p>
         <div class="goto"><a href="#info"></a></div>
     </div>
+
+     <!-- Del med mina utbildningar-->
     <div id="educontent">
         
         <h2 class="headingcontent">Mina utbildningar</h2>
@@ -80,6 +109,7 @@
         </div>
     </div>
 
+    <!-- Del med min arbetserfarenhet-->
     <div id="workcontent">
 
         <h2 class="headingcontent">Min arbetserfarenhet</h2>
@@ -105,20 +135,22 @@
 
         </div>
     </div>
-               
-     <div id="webpcontent">
+      
+    <!-- Del med mina utvecklade webbsidor-->
+    <div id="webcontent">
         <h2 class="headingcontent">Mina webbsidor</h2>
-         <!-- Utskrift utvecklade webblatser-->
+         <!-- Utskrift utvecklade webbsidor-->
         <ul id="webplist">
 
         </ul>    
 
     </div>
-
+    <!-- sidfot-->
     <footer id="info">
+        <p><strong>Kontakta mig</strong></p>
         <p class="contact">Email: alicefagerberg96@gmail.com<br>Telefon: 070 689 9204</p>
         <p>copyright afagerberg | Alice Fagerberg</p>
-        <p><a href="#">afagerberg admin</a></p>
+        <p><a href="afagerberg.se/admin">afagerberg admin</a></p>
     </footer>
 
     <script src="js/main.js"></script>

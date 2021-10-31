@@ -1,3 +1,4 @@
+//DT173G Projekt webbsida, Alice Fagerberg
 "use strict";
 
 //variabler
@@ -6,11 +7,11 @@ let webplistEl = document.getElementById("webplist");
 //Händelselyssnare
 window.addEventListener("load", getAllwebpages);
 
-//Hämtar alla kurser och skriver ut
+//Hämtar alla webbsidor och skriver ut
 function getAllwebpages(){
     webplistEl.innerHTML = "";
 
-    fetch("http://localhost/webb3projekt/webpages")
+    fetch("https://dt173g_portfolio_restapi.afagerberg.se/webpages")
     .then(response => response.json())
     .then(data =>{
        data.forEach(webpage =>{

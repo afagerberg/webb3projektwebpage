@@ -1,7 +1,9 @@
+// Deklarerar variabler för paket
 const {src, dest, parallel, series, watch} = require('gulp');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 const imagemin = require('gulp-imagemin');
+const webp = require('gulp-webp');
 const browserSync = require('browser-sync').create();
 const sourcemaps = require('gulp-sourcemaps');
 const sass = require('gulp-sass')(require('sass'));
@@ -22,7 +24,7 @@ function copyHTML() {
     .pipe(dest('pub'));
 }
 
-//sass task
+//sass task - kompilerar till css, läggs i pub
 function sassTask() {
     return src(files.sassPath)
     .pipe(sourcemaps.init())
@@ -50,6 +52,13 @@ function imageTask() {
     .pipe(dest('pub/images'));    
 }
 
+//webp-task kopierar till pub
+function webpTask() {
+    return src(files.imagePath)
+    .pipe(webp())
+    .pipe(dest('pub/images'));    
+}
+
 
 //watch task
 function watchTask() {
@@ -57,11 +66,11 @@ function watchTask() {
     browserSync.init({
         server: "./pub"
     });
-
-    watch([files.htmlPath, files.sassPath, files.jsPath, files.imagePath], parallel(copyHTML, sassTask, jsTask, imageTask)).on('change', browserSync.reload);
+    //lyssna efter förändringar i sökvägar och kör tasks parallelt - live reload i webbläsaren med skapad webbserver
+    watch([files.htmlPath, files.sassPath, files.jsPath, files.imagePath], parallel(copyHTML, sassTask, jsTask, imageTask, webpTask)).on('change', browserSync.reload);
 }
-
+//exporterar task-funktioner i en serie
 exports.default = series(
-    parallel(copyHTML, sassTask, jsTask, imageTask),
+    parallel(copyHTML, sassTask, jsTask, imageTask, webpTask),
     watchTask
 );

@@ -1,9 +1,19 @@
-
+//mediaqueries
+// skärmar över 750px
 @media screen and (min-width:750px){
+
+    //banner med navigering
     #bannernav{
-        padding:100px 5px 0 5px;
+        padding:180px 5px 0 5px;
     }
+
+    //Sidhuvud - logotyp och navigeringsmeny
     header{
+        padding:18px 0px 15px 0;
+
+        .logobox{
+            margin-top:0;
+        }
         #horizontal {
             display:inline-block;
             width:auto;
@@ -22,20 +32,24 @@
             display:none;
 
         }
-    }
 
+    }
+    //introduktionsdel
     #intro {
         padding-top:300px;
         padding-bottom:300px;
     }
 }
+// skärmar över 810px
 @media screen and (min-width:810px){
-
+    //I sidhuvudet
     header{
+
         a:hover {
             filter:opacity(0.6);
         }
     }
+    //I introdelen
     #intro{
         .roundimg {
             width:300px;
@@ -43,6 +57,7 @@
             border-radius:300px;
         }
     }
+    //siddelar och innehåll
     #educontent, #workcontent, #webpcontent {
         padding:60px 8px 100px 8px;
     }

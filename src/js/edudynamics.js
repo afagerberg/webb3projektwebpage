@@ -1,3 +1,4 @@
+//DT173G Projekt webbsida, Alice Fagerberg
 "use strict";
 // Variabler
 let edutableEl = document.getElementById("edutable");
@@ -6,12 +7,12 @@ let edulistEl = document.getElementById("edulist");
 //Händelselyssnare
 window.addEventListener("load", getAllEducations);
 
-//Hämtar alla kurser och skriver ut
+//Hämtar alla utbildningar och skriver ut
 function getAllEducations(){
     edulistEl.innerHTML = "";
     edutableEl.innerHTML = "";
 
-    fetch("http://localhost/webb3projekt/completedstudies")
+    fetch("https://dt173g_portfolio_restapi.afagerberg.se/completedstudies")
     .then(response => response.json())
     .then(data =>{
        data.forEach(education =>{

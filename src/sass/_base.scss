@@ -1,12 +1,52 @@
+//dt173g Projekt Alice Fagerberg
+
+//importerar typsnitt
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&display=swap');
 
-//Typsnitt
+//Variabler
+
+    //Typsnitt
 $fontstack: 'Nunito', sans-serif;
 $bold: 800;
 
-//Färgschema
-$primary2:rgb(212, 134, 17);
+    //Färgschema
 $primary1:rgb(34, 45, 70);
+$primary2:rgb(212, 134, 17);
 $primary3:rgb(36, 36, 36);
 $primary4:rgb(156, 40, 11);
+
+// mixins oxh flödeskontroll
+
+    //siddelar för portfolioinnehåll
+@mixin content($bcolor) {
+    width:100%;
+    padding:50px 8px 50px 8px;
+    scroll-margin-top:76px;
+    background-color: $bcolor;
+}
+
+    //navigering i sidhuvud - dropdown eller horisontell
+@mixin headnav($color, $horizontal: false){
+    
+    @if $horizontal {
+        color:$color;
+        transition: all 0.2s;
+        font-weight:bold;
+        display:inline-block;
+        padding:10px 15px 10px 15px;
+        border-right:0.5px solid lighten($color,65);
+        border-top:0;
+        font-size:0.95em;
+    }
+    @else {
+        display:block;
+        width:100%;
+        padding:25px 20px 20px 20px;
+        border-top:2px solid rgba(202, 202, 202, 0.637);
+        color: $color;
+        font-weight:bold;
+        font-size:1.1em;
+        transition:all 0.3s;
+    }
+}
 
