@@ -16,7 +16,7 @@ Webbsidan har utvecklats med build-paketet gulp där följande paket/plugins har
 * gulp-babel
 
 ## Vill du kolla på webbsidan och dess utvecklingsmiljö?
-Klona ner: git clone `https://github.com/afagerberg/webb3projektwebpage.git`
+Klona ner: `git clone https://github.com/afagerberg/webb3projektwebpage.git`
 
 Öppna projektet - antingen i command prompt eller i din textredigerare. Kör npm install i terminalen. Nu kommer din node_modules mapp att installeras. Kör därefter kommandot "gulp" och du är igång. 
 
